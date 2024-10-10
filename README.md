@@ -64,7 +64,18 @@ Path/To/Project Content Production
    ╰─ Project Content Production Table.md
 ```
 
+## Screenshots
+### Calendar view (Folder Note)
+![](docs/calendar.png)
+
+### Table view (DB Folder)
+![](docs/table.png)
+
+### Item view
+![](docs/production.png)
+
 ## Improvements
+- Add images to this documentation
 - Improve the calendar view with publication dates and scheduled tasks
 - Test if you can create a folder note named differently from the folder it is in
 - Decide to delete the useless Productions folder in the templates
