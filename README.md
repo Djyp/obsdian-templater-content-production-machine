@@ -75,14 +75,14 @@ Path/To/Project Content Production
 ![](docs/production.png)
 
 ## Improvements
-- Add images to this documentation
-- Improve the calendar view with publication dates and scheduled tasks
-- Test if you can create a folder note named differently from the folder it is in
-- Decide to delete the useless Productions folder in the templates
-- Find a shorter name and choose better words to make it more clear
-- Make it so it fits anyone's file structure
-- Better labels for the colums
-- Avoid the frenghlish content to a complete english template
+- [x] Add images to this documentation
+- [x] Improve the calendar view with publication dates and scheduled tasks
+- [x] Decide to delete the useless Productions folder in the templates
+- [x] Avoid the frenghlish content to a complete english template
+- [ ] Test if you can create a folder note named differently from the folder it is in
+- [ ] Find a shorter name and choose better words to make it more clear
+- [ ] Make it so it fits anyone's file structure
+- [ ] Better labels for the colums
 
 ## Personal choices
 I used Folder Notes to have less files in the file explorer. And having the folder to be clickable makes it more like a starting point.
