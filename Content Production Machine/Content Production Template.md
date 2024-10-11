@@ -5,21 +5,22 @@ mandatoryPredecessor:
 channel: 
 type: 
 topicCategory: 
-Notes: 
+notes: 
 publishedAt: 
 postedUrls: 
 tags:
 ---
-## Autres titres envisagés
-## Tâches
-- Étape de recherche
-- Écriture
-- Tournage
-- Montage
-- Publication
-## Idées
-### Période de publication
+## Other possible titles
+## Tasks
+- Research
+- Writing
+- Shooting
+- Editing
+- Publish
+## Ideas
+### Possible publication date
 ### Concept
-### Publications reliées
+### Related productions
 
-## Texte
+## Content
+Write your article/video/post here
