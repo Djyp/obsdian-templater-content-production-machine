@@ -255,7 +255,7 @@ columns:
       persist_changes: false
       formula_query: ${row.__tasks__.filter(t=>!t.completed && t.scheduled).sort((t1,t2)=>t1.scheduled - t2.scheduled)[0].scheduled.toString().slice(0,10)}
   tags:
-    input: text
+    input: tags
     accessorKey: tags
     key: tags
     id: tags
