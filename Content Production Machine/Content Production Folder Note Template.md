@@ -26,17 +26,53 @@ cssclasses:
 ```dataviewjs
 this.container.style.minHeight = "620px";
 const { renderCalendar } = app.plugins.plugins["obsidian-full-calendar"];
-const tasks = dv.pages('"' + dv.current().file.folder + '/Productions"').file
+const productionsDir = '"' + dv.current().file.folder + '/Productions"';
+const productions = dv.pages(productionsDir).file
+let events = [];
 
-let calendar = renderCalendar(this.container, tasks.map(
-function(task) {
-	return {
-	start: new Date(task.frontmatter.createdAt),
-	id: task.link,
-	title: task.name,
-	};
-}
-));
+// List of publish dates
+const publishDateColor = '#B4BEFE';
+productions.forEach(p => {
+	if (p.frontmatter.publishedAt != undefined) {
+		events.push([{
+			start: new Date(p.frontmatter.publishedAt),
+			id: p.link,
+			title: p.name,
+			textColor: publishDateColor
+			}]);
+	}
+});
+// List of tasks
+const taskColor = '#fab387';
+const tasks = dv.pages(productionsDir)
+	.file.tasks
+	.where(t => !t.completed)
+	.where(t => t.status == ' ')
+	.where(t => {
+		if (typeof(t.scheduled) == 'object') {
+			return t.scheduled <= dv.date('today')
+		} else if (typeof(t.due) == 'object') {
+			return t.due <= dv.date('today')
+		}
+		return false
+	})
+	.map((t) => {
+		if (typeof(t.scheduled) == 'object') {
+			t.due = t.scheduled
+		}
+		return t;
+	});
+tasks.map((
+	function(task) {
+		events.push([{
+		start: new Date(task.due),
+		id: task.link,
+		title: task.text,
+		color: taskColor
+		}])
+	}
+))
+let calendar = renderCalendar(this.container, events);
 calendar.render();
 window.setTimeout(_ => {calendar.changeView('dayGridMonth');}, 1);
 ```
